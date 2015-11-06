@@ -6,6 +6,8 @@
     <meta charset="utf-8" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" /> 
+    <link href="Content/css_main.css" rel="stylesheet" />
+    <link href="Content/css_home.css" rel="stylesheet" />
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <asp:PlaceHolder runat="server">        
         <script src="<%: ResolveUrl("~/Scripts/modernizr-2.6.2.js") %>"></script>
@@ -13,7 +15,7 @@
     <meta name="viewport" content="width=device-width" />
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
-<body>
+<body style="direction: rtl;">
     <form runat="server">
     <asp:ScriptManager runat="server">
         <Scripts>
@@ -23,33 +25,38 @@
     </asp:ScriptManager>
     <header>
         <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title"><a runat="server" href="~/">your logo here</a></p>
-            </div>
             <div class="float-right">
+                <p class="site-title"><a runat="server" href="~/">فروشگاه اینترنتی شیوا</a></p>
+                <asp:TextBox ID="textSearch" runat="server" placeholder="جست و جو در فروشگاه"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" Text="جست و جو" />
+            </div>
+            
+            <div class="float-left">
                 <section id="login">
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul>
-                                <li><a id="registerLink" runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a id="loginLink" runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a id="registerLink" runat="server" href="~/Account/Register">ثبت نام</a></li>
+                                <li><a id="loginLink" runat="server" href="~/Account/Login">ورود</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <p>
-                                Hello, <a runat="server" class="username" href="~/Account/Manage" title="Manage your account">
+                                خوش آمدید <a runat="server" class="username" href="~/Account/Manage" title="Manage your account">
                                     <asp:LoginName runat="server" CssClass="username" />
                                 </a>!
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="خروج" LogoutPageUrl="~/" />
+                            <a id="aCartSummary" class="topline" style="float:left;margin:5px 0 0 5px;" href="">0 کالا <img src="Content/Images/cart-icon.gif" style="float:left;"></a>
                             </p>
+
                         </LoggedInTemplate>
                     </asp:LoginView>
                 </section>
                 <nav>
                     <ul id="menu">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/">صفجه اصلی</a></li>
+                        <li><a runat="server" href="~/About">خرید کالا</a></li>
+                        <li><a runat="server" href="~/Contact">تماس با ما</a></li>
                     </ul>
                 </nav>
             </div>
