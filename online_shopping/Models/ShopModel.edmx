@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Online_ShoppingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Catagory">
+          <Key>
+            <PropertyRef Name="CatagoryId" />
+          </Key>
+          <Property Name="CatagoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CatagoryName" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ProductCat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="CatagoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductSell" Type="int" Nullable="false" />
+          <Property Name="ProductType" Type="int" Nullable="false" />
+          <Property Name="ImageSrc" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserBasket">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="BDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserSell">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="BDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ProductCat_ToCatagory">
+          <End Role="Catagory" Type="Self.Catagory" Multiplicity="1" />
+          <End Role="ProductCat" Type="Self.ProductCat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catagory">
+              <PropertyRef Name="CatagoryId" />
+            </Principal>
+            <Dependent Role="ProductCat">
+              <PropertyRef Name="CatagoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCat_ToProducts">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductCat" Type="Self.ProductCat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductCat">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserBasket_ToProducts">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="UserBasket" Type="Self.UserBasket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="UserBasket">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserBasket_ToUsers">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserBasket" Type="Self.UserBasket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserBasket">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSell_ToProducts">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="UserSell" Type="Self.UserSell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="UserSell">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSell_ToUsers">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserSell" Type="Self.UserSell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserSell">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Online_ShoppingModelStoreContainer">
+          <EntitySet Name="Catagory" EntityType="Self.Catagory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCat" EntityType="Self.ProductCat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserBasket" EntityType="Self.UserBasket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserSell" EntityType="Self.UserSell" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ProductCat_ToCatagory" Association="Self.FK_ProductCat_ToCatagory">
+            <End Role="Catagory" EntitySet="Catagory" />
+            <End Role="ProductCat" EntitySet="ProductCat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCat_ToProducts" Association="Self.FK_ProductCat_ToProducts">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductCat" EntitySet="ProductCat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserBasket_ToProducts" Association="Self.FK_UserBasket_ToProducts">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="UserBasket" EntitySet="UserBasket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserBasket_ToUsers" Association="Self.FK_UserBasket_ToUsers">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserBasket" EntitySet="UserBasket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSell_ToProducts" Association="Self.FK_UserSell_ToProducts">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="UserSell" EntitySet="UserSell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSell_ToUsers" Association="Self.FK_UserSell_ToUsers">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserSell" EntitySet="UserSell" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Online_ShoppingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Catagory">
+          <Key>
+            <PropertyRef Name="CatagoryId" />
+          </Key>
+          <Property Name="CatagoryId" Type="Int32" Nullable="false" />
+          <Property Name="CatagoryName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="ProductCats" Relationship="Self.FK_ProductCat_ToCatagory" FromRole="Catagory" ToRole="ProductCat" />
+        </EntityType>
+        <EntityType Name="ProductCat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="CatagoryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Catagory" Relationship="Self.FK_ProductCat_ToCatagory" FromRole="ProductCat" ToRole="Catagory" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductCat_ToProducts" FromRole="ProductCat" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductSell" Type="Int32" Nullable="false" />
+          <Property Name="ProductType" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProductCats" Relationship="Self.FK_ProductCat_ToProducts" FromRole="Products" ToRole="ProductCat" />
+          <NavigationProperty Name="UserBaskets" Relationship="Self.FK_UserBasket_ToProducts" FromRole="Products" ToRole="UserBasket" />
+          <NavigationProperty Name="UserSells" Relationship="Self.FK_UserSell_ToProducts" FromRole="Products" ToRole="UserSell" />
+          <Property Name="ImageSrc" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserBasket">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="BDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_UserBasket_ToProducts" FromRole="UserBasket" ToRole="Products" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserBasket_ToUsers" FromRole="UserBasket" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserBaskets" Relationship="Self.FK_UserBasket_ToUsers" FromRole="Users" ToRole="UserBasket" />
+          <NavigationProperty Name="UserSells" Relationship="Self.FK_UserSell_ToUsers" FromRole="Users" ToRole="UserSell" />
+        </EntityType>
+        <EntityType Name="UserSell">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="BDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_UserSell_ToProducts" FromRole="UserSell" ToRole="Products" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserSell_ToUsers" FromRole="UserSell" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_ProductCat_ToCatagory">
+          <End Role="Catagory" Type="Self.Catagory" Multiplicity="1" />
+          <End Role="ProductCat" Type="Self.ProductCat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catagory">
+              <PropertyRef Name="CatagoryId" />
+            </Principal>
+            <Dependent Role="ProductCat">
+              <PropertyRef Name="CatagoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCat_ToProducts">
+          <End Role="Products" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductCat" Type="Self.ProductCat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductCat">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserBasket_ToProducts">
+          <End Role="Products" Type="Self.Product" Multiplicity="1" />
+          <End Role="UserBasket" Type="Self.UserBasket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="UserBasket">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSell_ToProducts">
+          <End Role="Products" Type="Self.Product" Multiplicity="1" />
+          <End Role="UserSell" Type="Self.UserSell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="UserSell">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserBasket_ToUsers">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="UserBasket" Type="Self.UserBasket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserBasket">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSell_ToUsers">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="UserSell" Type="Self.UserSell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserSell">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Online_ShoppingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Catagories" EntityType="Self.Catagory" />
+          <EntitySet Name="ProductCats" EntityType="Self.ProductCat" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="UserBaskets" EntityType="Self.UserBasket" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserSells" EntityType="Self.UserSell" />
+          <AssociationSet Name="FK_ProductCat_ToCatagory" Association="Self.FK_ProductCat_ToCatagory">
+            <End Role="Catagory" EntitySet="Catagories" />
+            <End Role="ProductCat" EntitySet="ProductCats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCat_ToProducts" Association="Self.FK_ProductCat_ToProducts">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductCat" EntitySet="ProductCats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserBasket_ToProducts" Association="Self.FK_UserBasket_ToProducts">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="UserBasket" EntitySet="UserBaskets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSell_ToProducts" Association="Self.FK_UserSell_ToProducts">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="UserSell" EntitySet="UserSells" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserBasket_ToUsers" Association="Self.FK_UserBasket_ToUsers">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserBasket" EntitySet="UserBaskets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSell_ToUsers" Association="Self.FK_UserSell_ToUsers">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserSell" EntitySet="UserSells" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Online_ShoppingModelStoreContainer" CdmEntityContainer="Online_ShoppingEntities">
+          <EntitySetMapping Name="Catagories">
+            <EntityTypeMapping TypeName="Online_ShoppingModel.Catagory">
+              <MappingFragment StoreEntitySet="Catagory">
+                <ScalarProperty Name="CatagoryId" ColumnName="CatagoryId" />
+                <ScalarProperty Name="CatagoryName" ColumnName="CatagoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductCats">
+            <EntityTypeMapping TypeName="Online_ShoppingModel.ProductCat">
+              <MappingFragment StoreEntitySet="ProductCat">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="CatagoryId" ColumnName="CatagoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="Online_ShoppingModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ImageSrc" ColumnName="ImageSrc" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductSell" ColumnName="ProductSell" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserBaskets">
+            <EntityTypeMapping TypeName="Online_ShoppingModel.UserBasket">
+              <MappingFragment StoreEntitySet="UserBasket">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="BDate" ColumnName="BDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Online_ShoppingModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserSells">
+            <EntityTypeMapping TypeName="Online_ShoppingModel.UserSell">
+              <MappingFragment StoreEntitySet="UserSell">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="BDate" ColumnName="BDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

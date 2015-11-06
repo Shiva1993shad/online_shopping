@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using online_shopping.Models;
 
 namespace online_shopping
 {
@@ -68,6 +69,18 @@ namespace online_shopping
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public int GetItemCnt()
+        {
+            string username= HttpContext.Current.User.Identity.Name;
+            Online_ShoppingEntities db=new Online_ShoppingEntities();
+            var user= db.Users.FirstOrDefault(p => p.UserName == username);
+            if (user != null)
+            {
+                return user.UserBaskets.Select(p => p.Count).Sum();
+            }
+            return 0;
         }
     }
 }
