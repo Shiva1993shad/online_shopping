@@ -28,7 +28,7 @@
             <div class="float-right">
                 <p class="site-title"><a runat="server" href="~/">فروشگاه اینترنتی شیوا</a></p>
                 <asp:TextBox ID="textSearch" runat="server" placeholder="جست و جو در فروشگاه"></asp:TextBox>
-                <asp:Button ID="Button1" runat="server" Text="جست و جو" />
+                <asp:Button ID="Button1" runat="server" Text="جست و جو" OnClick="Button1_Click" />
             </div>
             
             <div class="float-left">
@@ -46,7 +46,7 @@
                                     <asp:LoginName runat="server" CssClass="username" />
                                 </a>!
                                 <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="خروج" LogoutPageUrl="~/" />
-                            <a id="aCartSummary" class="topline" style="float:left;margin:5px 0 0 5px;" href=""><%: GetItemCnt() %>  کالا <img src="../Content/Images/cart-icon.gif" style="float:left;"></a>
+                            <a id="aCartSummary" class="topline" style="float:left;margin:5px 0 0 5px;" href="../Product/ShowBasket"><%: GetItemCnt() %>  کالا <img src="../Content/Images/cart-icon.gif" style="float:left;"></a>
                             </p>
 
                         </LoggedInTemplate>
@@ -55,7 +55,7 @@
                 <nav>
                     <ul id="menu">
                         <li><a runat="server" href="~/">صفجه اصلی</a></li>
-                        <li><a runat="server" href="~/About">خرید کالا</a></li>
+                        <li><a runat="server" href="~/Product/Products.aspx">خرید کالا</a></li>
                         <li><a runat="server" href="~/Contact">تماس با ما</a></li>
                     </ul>
                 </nav>

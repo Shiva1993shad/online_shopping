@@ -7,78 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace online_shopping.Account
-{
-
-
-    public partial class Manage
-    {
-
+namespace online_shopping.Account {
+    
+    
+    public partial class Manage {
+        
         /// <summary>
-        /// successMessage control.
+        /// tb_mobile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder successMessage;
-
+        protected global::System.Web.UI.WebControls.TextBox tb_mobile;
+        
         /// <summary>
-        /// setPassword control.
+        /// tb_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder setPassword;
-
+        protected global::System.Web.UI.WebControls.TextBox tb_email;
+        
         /// <summary>
-        /// password control.
+        /// btn_Save control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
-
-
+        protected global::System.Web.UI.WebControls.Button btn_Save;
+        
         /// <summary>
-        /// newPasswordMessage control.
+        /// LResult control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label newPasswordMessage;
-
-
-        /// <summary>
-        /// confirmPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox confirmPassword;
-
-        /// <summary>
-        /// changePassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder changePassword;
-
-
-        /// <summary>
-        /// externalLoginsList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView externalLoginsList;
-
+        protected global::System.Web.UI.WebControls.Label LResult;
     }
 }

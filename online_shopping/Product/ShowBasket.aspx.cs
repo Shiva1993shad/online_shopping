@@ -18,7 +18,7 @@ namespace online_shopping.Product
             var user = db.Users.FirstOrDefault(p => p.UserName == username);
             if (user != null)
             {
-                GridView1.DataSource = user.UserBaskets.Select(p => new { p.Id,p.Product.ProductName, p.Count });
+                GridView1.DataSource = user.UserBaskets.Where(p=>p.UserId==user.UserId).Select(p => new { p.Id,p.Product.ProductName, p.Count });
                 GridView1.DataBind();
             }
            
@@ -33,8 +33,19 @@ namespace online_shopping.Product
             var bas = db.UserBaskets.FirstOrDefault(p => p.Id == value);
             if (bas != null)
             {
+                var product = db.Products.FirstOrDefault(p => p.ProductId == bas.ProductId);
+                if (product != null)
+                    product.Amount += bas.Count;
                 db.UserBaskets.Remove(bas);
                 db.SaveChanges();
+
+            }
+            string username = HttpContext.Current.User.Identity.Name;
+            var user = db.Users.FirstOrDefault(p => p.UserName == username);
+            if (user != null)
+            {
+                GridView1.DataSource = user.UserBaskets.Where(p => p.UserId == user.UserId).Select(p => new { p.Id, p.Product.ProductName, p.Count });
+                GridView1.DataBind();
             }
 
         }

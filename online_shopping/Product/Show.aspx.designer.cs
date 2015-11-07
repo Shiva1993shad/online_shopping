@@ -49,6 +49,15 @@ namespace online_shopping.Product {
         protected global::System.Web.UI.WebControls.Label Sell;
         
         /// <summary>
+        /// amount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label amount;
+        
+        /// <summary>
         /// Tb_cnt control.
         /// </summary>
         /// <remarks>
@@ -65,5 +74,14 @@ namespace online_shopping.Product {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button add;
+        
+        /// <summary>
+        /// LResult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LResult;
     }
 }

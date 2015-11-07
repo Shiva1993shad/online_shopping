@@ -82,5 +82,10 @@ namespace online_shopping
             }
             return 0;
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Product/Products.aspx?query="+textSearch.Text);
+        }
     }
 }

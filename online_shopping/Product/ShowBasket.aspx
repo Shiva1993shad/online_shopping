@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShowBasket.aspx.cs" Inherits="online_shopping.Product.ShowBasket" %>
+﻿<%@ Page Title="نمایش سبد کالا" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShowBasket.aspx.cs" Inherits="online_shopping.Product.ShowBasket" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
