@@ -25,5 +25,12 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
 </asp:GridView>
+        <table>
+            <tr>
+                <td><asp:Label ID="l_sum" runat="server" Text=""></asp:Label></td>
+                <td>مجموع فاکتور</td>
+                
+            </tr>
+        </table>
     </div>
 </asp:Content>

@@ -17,10 +17,10 @@ namespace online_shopping.Product
 
             if (Request.QueryString.AllKeys.Any(p => p == "id"))
             {
-                string idstr = Request.QueryString[id];
+                string idstr = Request.QueryString["id"];
                 int.TryParse(idstr, out id);
                 Online_ShoppingEntities db = new Online_ShoppingEntities();
-                string username = HttpContext.Current.User.Identity.Name;
+                string username = HttpContext.Current.User.Identity.Name; // نام کاربری لاگین کرده
                 var user = db.Users.FirstOrDefault(p => p.UserName == username);
                 add.Enabled = user != null;
                 var pro = db.Products.FirstOrDefault(p => p.ProductId == id);

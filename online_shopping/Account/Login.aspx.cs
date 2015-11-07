@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using online_shopping.Models;
 
 namespace online_shopping.Account
 {
@@ -23,10 +24,11 @@ namespace online_shopping.Account
 
         protected void Login_Click(object sender, EventArgs e)
         {
-            if (UserName.Text == "admin" && Password.Text == "admin")
+            Online_ShoppingEntities db=new Online_ShoppingEntities();
+            if (db.Users.Any(p=>p.UserName==UserName.Text && p.Password==Password.Text))
             {
                 Result.Text = "با موفقیت وارد شدید";
-                FormsAuthentication.SetAuthCookie("admin", true);
+                FormsAuthentication.SetAuthCookie(UserName.Text, true);
                 Response.Redirect("~/Default.aspx");
             }
             else

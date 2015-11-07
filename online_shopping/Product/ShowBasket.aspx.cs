@@ -20,6 +20,10 @@ namespace online_shopping.Product
             {
                 GridView1.DataSource = user.UserBaskets.Where(p=>p.UserId==user.UserId).Select(p => new { p.Id,p.Product.ProductName, p.Count });
                 GridView1.DataBind();
+                l_sum.Text =
+                    user.UserBaskets.Where(p => p.UserId == user.UserId)
+                        .Sum(p => p.Count*p.Product.ProductSell)
+                        .ToString()+" تومان";
             }
            
         }
@@ -28,7 +32,7 @@ namespace online_shopping.Product
         {
             GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
             int value=0;
-            int.TryParse(row.Cells[2].Text, out value);
+            int.TryParse(row.Cells[2].Text, out value); // id dar userbasket 
             Online_ShoppingEntities db = new Online_ShoppingEntities();
             var bas = db.UserBaskets.FirstOrDefault(p => p.Id == value);
             if (bas != null)
@@ -37,15 +41,19 @@ namespace online_shopping.Product
                 if (product != null)
                     product.Amount += bas.Count;
                 db.UserBaskets.Remove(bas);
-                db.SaveChanges();
+                db.SaveChanges(); // generate query to save database
 
             }
-            string username = HttpContext.Current.User.Identity.Name;
+            string username = HttpContext.Current.User.Identity.Name; // refresh gridview baray gereftan data jadid
             var user = db.Users.FirstOrDefault(p => p.UserName == username);
             if (user != null)
             {
                 GridView1.DataSource = user.UserBaskets.Where(p => p.UserId == user.UserId).Select(p => new { p.Id, p.Product.ProductName, p.Count });
                 GridView1.DataBind();
+                l_sum.Text =
+                   user.UserBaskets.Where(p => p.UserId == user.UserId)
+                       .Sum(p => p.Count * p.Product.ProductSell)
+                       .ToString() + " تومان";
             }
 
         }
