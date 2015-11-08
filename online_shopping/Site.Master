@@ -70,8 +70,8 @@
     </div>
     <footer>
         <div class="content-wrapper">
-            <div class="float-left">
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            <div class="float-right">
+                <p>&copy; <%: DateTime.Now.Year %> - فروشگاه اینترنتی شیوا</p>
             </div>
         </div>
     </footer>

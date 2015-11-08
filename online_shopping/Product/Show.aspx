@@ -25,7 +25,7 @@
         </tr>
         <tr>
             <td>
-               <asp:Image ID="ImageProduct" runat="server" />
+               <asp:Image ID="ImageProduct" runat="server" style="max-width: 130px;"/>
             </td>
             <td>
                پیش نمایش
