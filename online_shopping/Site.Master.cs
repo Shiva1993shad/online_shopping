@@ -75,7 +75,7 @@ namespace online_shopping
         {
             string username= HttpContext.Current.User.Identity.Name;
             Online_ShoppingEntities db=new Online_ShoppingEntities();
-            var user= db.Users.FirstOrDefault(p => p.UserName == username);
+            var user= db.Users.FirstOrDefault(p => p.UserName == username);//agar nayaft null bar migardoone
             if (user != null)
             {
                 return user.UserBaskets.Select(p => p.Count).Sum();
