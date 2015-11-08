@@ -7,7 +7,9 @@
                 <h1><%: Title %></h1>
             </hgroup>
             <p>
+                <a href="Product/Products.aspx" alt="مشاهده محصولات">
                 <img src="Content/Images/31f797d5-d967-47eb-949c-b6ab25a7e9fb.jpg" />
+                </a>
             </p>
         </div>
     </section>
