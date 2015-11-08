@@ -46,7 +46,7 @@
                             </li>
                         </ol>
                         <asp:Button runat="server" CommandName="MoveNext" Text="ثبت نام" OnClick="RegisterUser_Click" />
-                        <asp:Label ID="LResult" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="LResult" runat="server" Text=""></asp:Label>
                     </fieldset>
    </section>
 </asp:Content>
