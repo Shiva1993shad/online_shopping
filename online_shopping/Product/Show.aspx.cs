@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using online_shopping.Models;
+using online_shopping.MyUtility;
 
 namespace online_shopping.Product
 {
-    public partial class Show : System.Web.UI.Page
+    public partial class Show : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,14 +31,23 @@ namespace online_shopping.Product
                     this.Page.Title = pro.ProductName;
                     Id.Text = pro.ProductId.ToString();
                     Name.Text = pro.ProductName;
-                    Sell.Text = pro.ProductSell + " تومان";
-                    amount.Text = pro.Amount + " عدد";
-                    ImageProduct.ImageUrl = "../Content/Images/Products/" + pro.ImageSrc;
+
+                    Sell.Text = pro.ProductSell + Resources.Resource.PriceUnit;
+                    amount.Text = pro.Amount + Resources.Resource.ItemsCnt;
+                    ImageProduct.ImageUrl = MyConfigs.ProductImageDir + pro.ImageSrc;
+                    if (CultureInfo.CurrentCulture.Name == "fa")
+                    {
+                        info.Text = pro.ProductInfo_Fa;
+                    }
+                    else
+                    {
+                        info.Text = pro.ProductInfo_En;
+                    }
                     if (pro.Amount < 1)
                     {
                         add.Enabled = false;
                         Tb_cnt.Enabled = false;
-                        Tb_cnt.Text = "عدم موجودی";
+                        Tb_cnt.Text = Resources.Resource.ErrorNoItems;
                     }
 
                 }

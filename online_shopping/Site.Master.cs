@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -68,7 +69,21 @@ namespace online_shopping
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!this.IsPostBack)
+            {
+                if (ddlLanguages.Items.FindByValue(CultureInfo.CurrentCulture.Name) != null)
+                {
+                    ddlLanguages.Items.FindByValue(CultureInfo.CurrentCulture.Name).Selected = true;
+                }
+            }
+            hl_addproduct.Visible = false;
+            Online_ShoppingEntities db = new Online_ShoppingEntities();
+            string username = HttpContext.Current.User.Identity.Name; // نام کاربری لاگین کرده
+            var user = db.Users.FirstOrDefault(p => p.UserName == username);
+            if (user != null)
+            {
+                hl_addproduct.Visible = user.UserType == 1;
+            }
         }
 
         public int GetItemCnt()

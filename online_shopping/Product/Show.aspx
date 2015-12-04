@@ -25,6 +25,14 @@
         </tr>
         <tr>
             <td>
+                <asp:Label ID="info" runat="server" Text=""></asp:Label>
+            </td>
+            <td>
+                توضیحات کالا
+            </td>
+        </tr>
+        <tr>
+            <td>
                <asp:Image ID="ImageProduct" runat="server" style="max-width: 130px;"/>
             </td>
             <td>

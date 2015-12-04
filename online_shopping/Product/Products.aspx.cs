@@ -8,7 +8,7 @@ using online_shopping.Models;
 
 namespace online_shopping.Product
 {
-    public partial class Products : System.Web.UI.Page
+    public partial class Products : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

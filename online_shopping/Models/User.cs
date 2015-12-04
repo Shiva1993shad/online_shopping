@@ -26,6 +26,7 @@ namespace online_shopping.Models
         public string Password { get; set; }
         public string Email { get; set; }
         public string Mobile { get; set; }
+        public short UserType { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserBasket> UserBaskets { get; set; }

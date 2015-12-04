@@ -30,6 +30,8 @@
           <Property Name="ProductType" Type="int" Nullable="false" />
           <Property Name="ImageSrc" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="ProductInfo_Fa" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProductInfo_En" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="UserBasket">
           <Key>
@@ -50,6 +52,7 @@
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Mobile" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserType" Type="smallint" Nullable="false" />
         </EntityType>
         <EntityType Name="UserSell">
           <Key>
@@ -200,6 +203,8 @@
           <NavigationProperty Name="UserSells" Relationship="Self.FK_UserSell_ToProducts" FromRole="Products" ToRole="UserSell" />
           <Property Name="ImageSrc" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="ProductInfo_Fa" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductInfo_En" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="UserBasket">
           <Key>
@@ -224,6 +229,7 @@
           <NavigationProperty Name="UserSells" Relationship="Self.FK_UserSell_ToUsers" FromRole="Users" ToRole="UserSell" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserType" Type="Int16" Nullable="false" />
         </EntityType>
         <EntityType Name="UserSell">
           <Key>
@@ -367,6 +373,8 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="Online_ShoppingModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductInfo_En" ColumnName="ProductInfo_En" />
+                <ScalarProperty Name="ProductInfo_Fa" ColumnName="ProductInfo_Fa" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="ImageSrc" ColumnName="ImageSrc" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
@@ -390,6 +398,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Online_ShoppingModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
                 <ScalarProperty Name="Mobile" ColumnName="Mobile" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />

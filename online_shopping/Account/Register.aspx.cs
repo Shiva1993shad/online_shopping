@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Membership.OpenAuth;
 using online_shopping.Models;
+using online_shopping.MyUtility;
 
 namespace online_shopping.Account
 {
@@ -65,6 +66,12 @@ namespace online_shopping.Account
             {
                 LResult.Text = "این موبایل قبلا در سیستم ثبت شده است";
                 LResult.ForeColor = Color.Red;
+            }
+            else if (!MyConfigs.EnableSignUp)
+            {
+                LResult.Text = "در حال حاضر امکان ثبت نام وجود ندارد لطفا مراجعه نمایید";
+                LResult.ForeColor = Color.Red;
+                
             }
             else
             {
