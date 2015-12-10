@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7e898e15ef8f4d2eb56911acee854263" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Application" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Membership" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Profile" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UsersOpenAuthAccount" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UsersOpenAuthData" Width="1.5" PointX="5.75" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.MembershipEntity_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.RoleEntity_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.User_Application" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.MembershipEntity_User" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ProfileEntity_User" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_UsersOpenAuthAccounts_dbo_UsersOpenAuthData_ApplicationName_MembershipUserName" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
