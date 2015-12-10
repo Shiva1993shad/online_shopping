@@ -129,11 +129,20 @@
   <data name="AddProuct2DbSuccess" xml:space="preserve">
     <value>کالا با موفقیت اضافه شد</value>
   </data>
+  <data name="Address" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="BeheshTAddress" xml:space="preserve">
+    <value>ایران-تهران-خیابان ولنجک-دانشگاه شهید بهشتی-دانشکده علوم و مهندسی کامپیوتر</value>
+  </data>
   <data name="BuyProduct" xml:space="preserve">
     <value>خرید کالا</value>
   </data>
   <data name="ContactUs" xml:space="preserve">
     <value>تماس با ما</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ایمیل</value>
   </data>
   <data name="ErrorAmountNumber" xml:space="preserve">
     <value>موجودی را به صورت عددی وارد نمایید</value>
@@ -153,14 +162,32 @@
   <data name="ItemsCnt" xml:space="preserve">
     <value>عدد</value>
   </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>ورود</value>
+  </data>
   <data name="LogOut" xml:space="preserve">
     <value>خروج</value>
   </data>
   <data name="MainPage" xml:space="preserve">
     <value>صفحه اصلی</value>
   </data>
+  <data name="MainPhone" xml:space="preserve">
+    <value>شماره های تماس اصلی</value>
+  </data>
+  <data name="Marketing" xml:space="preserve">
+    <value>بخش بازاریابی و فروش</value>
+  </data>
+  <data name="PhoneNumbers" xml:space="preserve">
+    <value>شماره های تماس</value>
+  </data>
+  <data name="PopProducts" xml:space="preserve">
+    <value>محبوب ترین کالاها</value>
+  </data>
   <data name="PriceUnit" xml:space="preserve">
-    <value>تومان</value>
+    <value>ریال</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>محصول</value>
   </data>
   <data name="ProductId" xml:space="preserve">
     <value>کدکالا</value>
@@ -174,7 +201,19 @@
   <data name="Register" xml:space="preserve">
     <value>ثبت نام</value>
   </data>
+  <data name="ShivaOnlineShop" xml:space="preserve">
+    <value>فروشگاه اینترنتی شیوا</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>پشتیبانی</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
     <value>خوش آمدید</value>
+  </data>
+  <data name="Welcome2ContactUs" xml:space="preserve">
+    <value>به صفحه ارتباط با ما خوش آمدید</value>
+  </data>
+  <data name="Welcome2ShivaOnlineShop" xml:space="preserve">
+    <value>به فروشگاه اینترنتی شیوا خوش آمدید</value>
   </data>
 </root>

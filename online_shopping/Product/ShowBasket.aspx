@@ -28,7 +28,7 @@
         <table>
             <tr>
                 <td><asp:Label ID="l_sum" runat="server" Text=""></asp:Label></td>
-                <td>مجموع فاکتور</td>
+                <td><asp:Literal runat="server" Text="<%$Resources:Resource, TotalBill%>" /></td>
                 
             </tr>
         </table>

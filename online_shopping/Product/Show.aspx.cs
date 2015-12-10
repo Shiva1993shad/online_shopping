@@ -32,8 +32,8 @@ namespace online_shopping.Product
                     Id.Text = pro.ProductId.ToString();
                     Name.Text = pro.ProductName;
 
-                    Sell.Text = pro.ProductSell + Resources.Resource.PriceUnit;
-                    amount.Text = pro.Amount + Resources.Resource.ItemsCnt;
+              //      Sell.Text = pro.ProductSell + Resources.Resource.PriceUnit;
+              //      amount.Text = pro.Amount + Resources.Resource.ItemsCnt;
                     ImageProduct.ImageUrl = MyConfigs.ProductImageDir + pro.ImageSrc;
                     if (CultureInfo.CurrentCulture.Name == "fa")
                     {
@@ -47,7 +47,7 @@ namespace online_shopping.Product
                     {
                         add.Enabled = false;
                         Tb_cnt.Enabled = false;
-                        Tb_cnt.Text = Resources.Resource.ErrorNoItems;
+               //         Tb_cnt.Text = Resources.Resource.ErrorNoItems;
                     }
 
                 }
