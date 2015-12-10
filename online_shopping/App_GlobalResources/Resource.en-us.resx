@@ -124,10 +124,10 @@
     <value>Add Product to Basket</value>
   </data>
   <data name="AddProduct2Db" xml:space="preserve">
-    <value>Add Product to Db</value>
+    <value>Add Product to Database</value>
   </data>
   <data name="AddProuct2DbSuccess" xml:space="preserve">
-    <value>Add product successfully</value>
+    <value>Product successfully َ Add to Database</value>
   </data>
   <data name="Address" xml:space="preserve">
     <value>Address</value>
@@ -160,7 +160,7 @@
     <value>Error! Privew Image Format Incompatible</value>
   </data>
   <data name="ItemsCnt" xml:space="preserve">
-    <value>Number</value>
+    <value>Number Of Available</value>
   </data>
   <data name="LogIn" xml:space="preserve">
     <value>Log In</value>
@@ -215,5 +215,35 @@
   </data>
   <data name="Welcome2ShivaOnlineShop" xml:space="preserve">
     <value>Welcome to Shiva Online Shop</value>
+  </data>
+  <data name="ApplyChange" xml:space="preserve">
+    <value>Apply Change</value>
+  </data>
+  <data name="ErrorItemNotFound" xml:space="preserve">
+    <value>Error!No Item Found</value>
+  </data>
+  <data name="MobilePhone" xml:space="preserve">
+    <value>MobilePhone</value>
+  </data>
+  <data name="PassWord" xml:space="preserve">
+    <value>PassWord</value>
+  </data>
+  <data name="ProductPrice" xml:space="preserve">
+    <value>Product Price</value>
+  </data>
+  <data name="ProductSuccessAdd2Basket" xml:space="preserve">
+    <value>Product Successfully Add to Basket</value>
+  </data>
+  <data name="RequestCnt" xml:space="preserve">
+    <value>Number of Request</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchIn" xml:space="preserve">
+    <value>Search in this shop</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>UserName</value>
   </data>
 </root>

@@ -83,18 +83,19 @@ namespace online_shopping.Product
                         ProductId = id
                     });
                     db.SaveChanges();
-                    LResult.Text = "با موفقیت به سبد کالا شما اضافه شد";
+                    LResult.Text = Resources.Resource.ProductSuccessAdd2Basket;
                     LResult.ForeColor=Color.Green;
                 }
                 else
                 {
-                    LResult.Text = "کالای شما موجود نمی باشد";
+                    LResult.Text = Resources.Resource.ErrorNoItems;
                     LResult.ForeColor = Color.Red;
                 }
             }
             else
             {
-                LResult.Text = "کالای شما یافت نشد";
+
+                LResult.Text = Resources.Resource.ErrorItemNotFound;
                 LResult.ForeColor = Color.Red;
             }
         }

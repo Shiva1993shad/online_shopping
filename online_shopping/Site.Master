@@ -27,8 +27,8 @@
         <div class="content-wrapper">
             <div class="float-right">
                 <p class="site-title"><a runat="server" href="~/"><asp:Literal runat="server" Text="<%$Resources:Resource, Welcome2ShivaOnlineShop%>" /></a></p>
-                <asp:TextBox ID="textSearch" runat="server" placeholder="جست و جو در فروشگاه"></asp:TextBox>
-                <asp:Button ID="Button1" runat="server" Text="جست و جو" OnClick="Button1_Click" />
+                <asp:TextBox ID="textSearch" runat="server" placeholder="<%$Resources:Resource, searchin%>"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" Text="<%$Resources:Resource, search%>" OnClick="Button1_Click" />
             </div>
             
             <div class="float-left">

@@ -27,6 +27,7 @@ namespace Resources {
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
+        public static string ProductSuccessAdd2Basket;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resource() {
@@ -239,5 +240,7 @@ namespace Resources {
                 return ResourceManager.GetString("Welcome", resourceCulture);
             }
         }
+
+        public static string ErrorItemNotFound { get; set; }
     }
 }

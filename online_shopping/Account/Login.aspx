@@ -11,7 +11,7 @@
                     <legend>فرم ورود</legend>
                     <ol>
                         <li>
-                            <asp:Label runat="server" AssociatedControlID="UserName"><asp:Literal runat="server" Text="<%$Resources:Resource, UserName%>" /></asp:Label>
+                            <asp:Label runat="server" AssociatedControlID="UserName"><asp:Literal runat="server" Text="<%$Resources:Resource, Username%>" /></asp:Label>
                             <asp:TextBox runat="server" ID="UserName" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." />
                         </li>
