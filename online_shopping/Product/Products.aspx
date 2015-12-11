@@ -1,4 +1,4 @@
-﻿<%@ Page Title="محصولات" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="online_shopping.Product.Products" %>
+﻿<%@ Page Title="<%$Resources:Resource,Products%>" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="online_shopping.Product.Products" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
@@ -10,7 +10,7 @@
                 <EmptyDataTemplate>
                     <table >
                         <tr>
-                            <td>کالایی یافت نشد</td>
+                            <td><asp:Literal runat="server" Text="<%$Resources:Resource, ErrorItemNotFound%>" /></td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -41,7 +41,7 @@
                                     </a>
                                     <br />
                                     <span>
-                                        <b>قیمت: </b><%#:String.Format("{0} تومان", Item.ProductSell)%>
+                                        <b><asp:Literal runat="server" Text="<%$Resources:Resource,ProductPrice%>" /> : </b><%#:String.Format("{0} تومان", Item.ProductSell)%>
                                     </span>
                                     <br />
                                 </td>

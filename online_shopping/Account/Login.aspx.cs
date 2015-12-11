@@ -9,7 +9,7 @@ using online_shopping.Models;
 
 namespace online_shopping.Account
 {
-    public partial class Login : Page
+    public partial class Login : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

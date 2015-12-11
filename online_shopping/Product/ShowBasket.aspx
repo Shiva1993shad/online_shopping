@@ -1,4 +1,4 @@
-﻿<%@ Page Title="نمایش سبد کالا" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShowBasket.aspx.cs" Inherits="online_shopping.Product.ShowBasket" %>
+﻿<%@ Page Title="<%$Resources:Resource, ShowBasket%>" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShowBasket.aspx.cs" Inherits="online_shopping.Product.ShowBasket" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
@@ -9,10 +9,10 @@
         autogeneratecolumns="False" dir="rtl" Height="140px" Width="581px" Font-Names="Tahoma" OnRowDeleting="GridView1_RowDeleting">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField  DataField="Count" HeaderText="تعداد کالا" />
-            <asp:BoundField DataField="ProductName" HeaderText="نام کالا" />
-            <asp:BoundField DataField="Id" HeaderText="کد درخواست" />
-            <asp:CommandField DeleteText="حذف" ShowDeleteButton="True" />
+            <asp:BoundField  DataField="Count" HeaderText="<%$Resources:Resource, ItemsCnt%>" />
+            <asp:BoundField DataField="ProductName" HeaderText="<%$Resources:Resource, ProductName%>" />
+            <asp:BoundField DataField="Id" HeaderText="<%$Resources:Resource, RequestId%>" />
+            <asp:CommandField DeleteText="<%$Resources:Resource, Delete%>" ShowDeleteButton="True" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

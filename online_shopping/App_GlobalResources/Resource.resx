@@ -141,20 +141,50 @@
   <data name="BuyProduct" xml:space="preserve">
     <value>خرید کالا</value>
   </data>
+  <data name="CantRegisterRightNow" xml:space="preserve">
+    <value>در حال حاضر امکان ثبت نام وجود ندارد لطفا مراجعه نمایید</value>
+  </data>
   <data name="ContactUs" xml:space="preserve">
     <value>تماس با ما</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>ایمیل</value>
   </data>
+  <data name="EnglishDescription" xml:space="preserve">
+    <value>توضیحات انگلیسی</value>
+  </data>
+  <data name="EnterSystem" xml:space="preserve">
+    <value>ورود به سیستم</value>
+  </data>
   <data name="ErrorAmountNumber" xml:space="preserve">
     <value>موجودی را به صورت عددی وارد نمایید</value>
+  </data>
+  <data name="ErrorCompleteForm" xml:space="preserve">
+    <value>لطفا فرم را به طور کامل تکمیل نمایید</value>
+  </data>
+  <data name="ErrorEnterEmail" xml:space="preserve">
+    <value>لطفا رایانامه را وارد نمایید</value>
+  </data>
+  <data name="ErrorEnterMobile" xml:space="preserve">
+    <value>لطفا شماره تلفن همراه را وارد نمایید</value>
+  </data>
+  <data name="ErrorEnterPass" xml:space="preserve">
+    <value>لطفا رمز عبور را وارد نمایید</value>
+  </data>
+  <data name="ErrorEnterUsername" xml:space="preserve">
+    <value>لطفا نام کاربری را وارد نمایید</value>
   </data>
   <data name="ErrorItemNotFound" xml:space="preserve">
     <value>کالای مورد نظر یافت نشد</value>
   </data>
   <data name="ErrorNoItems" xml:space="preserve">
     <value>عدم موجودی</value>
+  </data>
+  <data name="ErrorPassNotMatch" xml:space="preserve">
+    <value>تکرار رمز عبور صحیح نیست</value>
   </data>
   <data name="ErrorPriceNumber" xml:space="preserve">
     <value>قیمت را به صورت عددی وارد نمایید</value>
@@ -165,11 +195,44 @@
   <data name="ErrorPrivewImageFormat" xml:space="preserve">
     <value>عکس پیش نمایش کالا را به فرمت jpg انتخاب نمایید</value>
   </data>
+  <data name="ErrorRepeatEmail" xml:space="preserve">
+    <value>این رایانامه قبلا در سیستم ثبت شده است</value>
+  </data>
+  <data name="ErrorRepeatMobile" xml:space="preserve">
+    <value>این موبایل قبلا در سیستم ثبت شده است</value>
+  </data>
+  <data name="ErrorRepeatPass" xml:space="preserve">
+    <value>لطفا تکرار رمز عبور را وارد نمایید</value>
+  </data>
+  <data name="ErrorRepeatUsername" xml:space="preserve">
+    <value>این نام کاربری قبلا در سیستم ثبت شده است</value>
+  </data>
+  <data name="ErrorShortPass" xml:space="preserve">
+    <value>طول پسورد حداقل باید 5 کاراکتر باشد</value>
+  </data>
+  <data name="ErrorValidEmail" xml:space="preserve">
+    <value>لطفا رایانامه معتبر وارد نمایید</value>
+  </data>
+  <data name="ErrorValidEmailField" xml:space="preserve">
+    <value>رمز عبور با تکرار آن یکسان نیست</value>
+  </data>
+  <data name="ErrorValidMobile" xml:space="preserve">
+    <value>لطفا شماره همراه معتبر وارد نمایید</value>
+  </data>
+  <data name="FarsiDescription" xml:space="preserve">
+    <value>توضیحات فارسی</value>
+  </data>
+  <data name="FillRegisterForm" xml:space="preserve">
+    <value>برای ثبت نام از قسمت پایین استفاده نمایید</value>
+  </data>
   <data name="ItemsCnt" xml:space="preserve">
     <value>تعداد کالای موجود</value>
   </data>
   <data name="LogIn" xml:space="preserve">
     <value>ورود</value>
+  </data>
+  <data name="LogInForm" xml:space="preserve">
+    <value>فرم ورود</value>
   </data>
   <data name="LogOut" xml:space="preserve">
     <value>خروج</value>
@@ -180,11 +243,17 @@
   <data name="MainPhone" xml:space="preserve">
     <value>شماره های تماس اصلی</value>
   </data>
+  <data name="ManageProfile" xml:space="preserve">
+    <value>مدیریت پروفایل کاربری</value>
+  </data>
   <data name="Marketing" xml:space="preserve">
     <value>بخش بازاریابی و فروش</value>
   </data>
   <data name="MobilePhone" xml:space="preserve">
     <value>موبایل</value>
+  </data>
+  <data name="NotRegistered" xml:space="preserve">
+    <value>اگر ثبت نام نکرده اید</value>
   </data>
   <data name="PassWord" xml:space="preserve">
     <value>کلمه عبور</value>
@@ -216,14 +285,26 @@
   <data name="ProductPrice" xml:space="preserve">
     <value>قیمت</value>
   </data>
+  <data name="Products" xml:space="preserve">
+    <value>محصولات</value>
+  </data>
   <data name="ProductSuccessAdd2Basket" xml:space="preserve">
     <value>کالا با موفقیت به سبد خرید افزوده شد</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>ثبت نام</value>
   </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>مرا بخاطر بسپار</value>
+  </data>
+  <data name="RepeatPass" xml:space="preserve">
+    <value>تایید رمز عبور</value>
+  </data>
   <data name="RequestCnt" xml:space="preserve">
     <value> تعداد کالای درخواستی</value>
+  </data>
+  <data name="RequestId" xml:space="preserve">
+    <value>کد درخواست</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>جست و جو</value>
@@ -234,8 +315,17 @@
   <data name="ShivaOnlineShop" xml:space="preserve">
     <value>فروشگاه اینترنتی شیوا</value>
   </data>
+  <data name="ShowBasket" xml:space="preserve">
+    <value>نمایش سبد کالا</value>
+  </data>
   <data name="Support" xml:space="preserve">
     <value>پشتیبانی</value>
+  </data>
+  <data name="TotalBill" xml:space="preserve">
+    <value>جمع صورت حساب</value>
+  </data>
+  <data name="UrUsernameAddSuccessfully" xml:space="preserve">
+    <value>نام کاربری شما با موفقیت اضافه شد . هم اکنون می توانید به سیستم وارد شوید</value>
   </data>
   <data name="Username" xml:space="preserve">
     <value>نام کاربری</value>

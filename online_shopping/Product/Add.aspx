@@ -11,7 +11,7 @@
                 <asp:TextBox ID="Tb_Name" runat="server"></asp:TextBox>
             </td>
             <td>
-                نام کالا
+                <asp:Literal runat="server" Text="<%$Resources:Resource, ProductName%>" />
             </td>
         </tr>
         <tr>
@@ -19,7 +19,7 @@
                 <asp:FileUpload ID="Fu_image" runat="server" />
             </td>
             <td>
-               پیش نمایش
+              <asp:Literal runat="server" Text="<%$Resources:Resource, ProductPreview%>" />
             </td>
         </tr>
         <tr>
@@ -27,7 +27,7 @@
                 <asp:TextBox ID="Tb_Sell" runat="server"></asp:TextBox>
             </td>
             <td>
-                قیمت
+               <asp:Literal runat="server" Text="<%$Resources:Resource, ProductPrice%>" />
             </td>
         </tr>
         <tr>
@@ -35,7 +35,7 @@
                <asp:TextBox ID="Tb_Amount" runat="server"></asp:TextBox>
             </td>
             <td>
-                تعداد موجودی
+                 <asp:Literal runat="server" Text="<%$Resources:Resource, ItemsCnt%>" />
             </td>
         </tr>
         <tr>
@@ -43,7 +43,7 @@
                <asp:TextBox ID="tb_InfoFa" runat="server"></asp:TextBox>
             </td>
             <td>
-                توضیحات فارسی
+                 <asp:Literal runat="server" Text="<%$Resources:Resource, FarsiDescription%>" />
             </td>
         </tr>
         <tr>
@@ -51,7 +51,7 @@
                <asp:TextBox ID="tb_InfoEa" runat="server"></asp:TextBox>
             </td>
             <td>
-                توضیحات انگلیسی
+                <asp:Literal runat="server" Text="<%$Resources:Resource, EnglishDescription%>" />
             </td>
         </tr>
         <tr>

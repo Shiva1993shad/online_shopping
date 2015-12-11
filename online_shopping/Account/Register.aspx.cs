@@ -12,7 +12,7 @@ using online_shopping.MyUtility;
 
 namespace online_shopping.Account
 {
-    public partial class Register : Page
+    public partial class Register : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,47 +29,56 @@ namespace online_shopping.Account
                 || string.IsNullOrEmpty(Email.Text)
                 )
             {
-                LResult.Text = "لطفا فرم را به طور کامل تکمیل نمایید";
+                LResult.Text = Resources.Resource.ErrorCompleteForm;
+                    //"لطفا فرم را به طور کامل تکمیل نمایید";
                 LResult.ForeColor = Color.Red;
             }
             else if (Password.Text.Length < 5)
             {
-                LResult.Text = "طول پسورد حداقل باید 5 کاراکتر باشد";
+                LResult.Text = Resources.Resource.ErrorShortPass;
+                    //"طول پسورد حداقل باید 5 کاراکتر باشد";
                 LResult.ForeColor = Color.Red;
             }
             else if(Password.Text!=ConfirmPassword.Text)
             {
-                LResult.Text = "رمز عبور با تکرار آن یکسان نیست";
+                LResult.Text = Resources.Resource.ErrorValidEmailField;
+                    //"رمز عبور با تکرار آن یکسان نیست";
                 LResult.ForeColor = Color.Red;
             }
             else if (!Email.Text.Contains("@") || !Email.Text.Contains("."))
             {
-                LResult.Text = "لطفا رایانامه معتبر وارد نمایید";
+                LResult.Text = Resources.Resource.ErrorValidEmail;
+                    //"لطفا رایانامه معتبر وارد نمایید";
                 LResult.ForeColor = Color.Red;
             }
             else if ( !Mobile.Text.StartsWith("09") || Mobile.Text.Length!=11)
             {
-                LResult.Text = "لطفا شماره همراه معتبر وارد نمایید";
+                LResult.Text = Resources.Resource.ErrorValidMobile;
+                    // "لطفا شماره همراه معتبر وارد نمایید";
                 LResult.ForeColor = Color.Red;
             }
             else if(db.Users.Any(p=>p.UserName==UserName.Text))
             {
-                LResult.Text = "این نام کاربری قبلا در سیستم ثبت شده است";
+                LResult.Text = Resources.Resource.ErrorRepeatUsername;
+                    //"این نام کاربری قبلا در سیستم ثبت شده است";
                 LResult.ForeColor = Color.Red;
             }
             else if (db.Users.Any(p => p.Email == Email.Text))
             {
-                LResult.Text = "این رایانامه قبلا در سیستم ثبت شده است";
+                LResult.Text = Resources.Resource.ErrorRepeatEmail;
+                    //"این رایانامه قبلا در سیستم ثبت شده است";
                 LResult.ForeColor = Color.Red;
             }
             else if (db.Users.Any(p => p.Mobile == Mobile.Text))
             {
-                LResult.Text = "این موبایل قبلا در سیستم ثبت شده است";
+                LResult.Text = Resources.Resource.ErrorRepeatMobile;
+                    //"این موبایل قبلا در سیستم ثبت شده است";
                 LResult.ForeColor = Color.Red;
             }
             else if (!MyConfigs.EnableSignUp)
             {
-                LResult.Text = "در حال حاضر امکان ثبت نام وجود ندارد لطفا مراجعه نمایید";
+                LResult.Text = Resources.Resource.CantRegisterRightNow;
+                    //"در حال حاضر امکان ثبت نام وجود ندارد لطفا مراجعه نمایید";
                 LResult.ForeColor = Color.Red;
                 
             }
@@ -83,7 +92,9 @@ namespace online_shopping.Account
                     UserName = UserName.Text
                 });
                 db.SaveChanges();
-                LResult.Text = "نام کاربری شما با موفقیت اضافه شد . هم اکنون می توانید به سیستم وارد شوید";
+                LResult.Text = Resources.Resource.UrUsernameAddSuccessfully;
+                //"نام کاربری شما با موفقیت اضافه شد . هم اکنون می توانید به سیستم وارد شوید";
+                // Resources.Resource.UrUsernameAddSuccessfully
                 LResult.ForeColor = Color.Green;
             }
 

@@ -10,7 +10,7 @@ using online_shopping.Models;
 
 namespace online_shopping.Account
 {
-    public partial class Manage : System.Web.UI.Page
+    public partial class Manage : BasePage
     {
         protected void Page_Load()
         {

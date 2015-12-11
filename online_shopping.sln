@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "online_shopping", "online_shopping\online_shopping.csproj", "{0231B184-057B-4255-B662-F884658E81A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestOnlineShop", "UnitTestOnlineShop\UnitTestOnlineShop.csproj", "{56830ADE-2A3F-4492-9DC7-0C99548BDA52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0231B184-057B-4255-B662-F884658E81A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0231B184-057B-4255-B662-F884658E81A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0231B184-057B-4255-B662-F884658E81A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56830ADE-2A3F-4492-9DC7-0C99548BDA52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56830ADE-2A3F-4492-9DC7-0C99548BDA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56830ADE-2A3F-4492-9DC7-0C99548BDA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56830ADE-2A3F-4492-9DC7-0C99548BDA52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

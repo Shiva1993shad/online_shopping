@@ -1,14 +1,14 @@
-﻿<%@ Page Title="ورود" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="online_shopping.Account.Login" %>
+﻿<%@ Page Title="<%$Resources:Resource,LogIn%>" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="online_shopping.Account.Login" %>
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <section id="loginForm">
-        <h2>ورود به سیستم</h2>
+        <h2><asp:Literal runat="server" Text="<%$Resources:Resource, EnterSystem%>" /></h2>
                 <p class="validation-summary-errors">
                     <asp:Literal runat="server" ID="FailureText" />
                 </p>
                 <fieldset>
-                    <legend>فرم ورود</legend>
+                    <legend><asp:Literal runat="server" Text="<%$Resources:Resource,LogInForm%>" /></legend>
                     <ol>
                         <li>
                             <asp:Label runat="server" AssociatedControlID="UserName"><asp:Literal runat="server" Text="<%$Resources:Resource, Username%>" /></asp:Label>
@@ -25,7 +25,7 @@
                             <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="checkbox"><asp:Literal runat="server" Text="<%$Resources:Resource,RememberMe%>" /></asp:Label>
                         </li>
                     </ol>
-                    <asp:Button runat="server" CommandName="Login" Text="ورود" OnClick="Login_Click" />
+                    <asp:Button runat="server" CommandName="Login" Text="<%$Resources:Resource,LogIn%>" OnClick="Login_Click" />
                     <asp:Label runat="server" ID="Result" ></asp:Label>
                 </fieldset>
         <p>

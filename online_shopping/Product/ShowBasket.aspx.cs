@@ -9,7 +9,7 @@ using online_shopping.Models;
 
 namespace online_shopping.Product
 {
-    public partial class ShowBasket : System.Web.UI.Page
+    public partial class ShowBasket : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +23,7 @@ namespace online_shopping.Product
                 l_sum.Text =
                     user.UserBaskets.Where(p => p.UserId == user.UserId)
                         .Sum(p => p.Count*p.Product.ProductSell)
-                        .ToString()+" تومان";
+                        .ToString() + Resources.Resource.PriceUnit;
             }
            
         }
@@ -53,7 +53,7 @@ namespace online_shopping.Product
                 l_sum.Text =
                    user.UserBaskets.Where(p => p.UserId == user.UserId)
                        .Sum(p => p.Count * p.Product.ProductSell)
-                       .ToString() + " تومان";
+                       .ToString() + Resources.Resource.PriceUnit;
             }
 
         }

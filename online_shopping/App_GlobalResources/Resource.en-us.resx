@@ -234,6 +234,9 @@
   <data name="ProductSuccessAdd2Basket" xml:space="preserve">
     <value>Product Successfully Add to Basket</value>
   </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
   <data name="RequestCnt" xml:space="preserve">
     <value>Number of Request</value>
   </data>
@@ -245,5 +248,92 @@
   </data>
   <data name="Username" xml:space="preserve">
     <value>UserName</value>
+  </data>
+  <data name="ManageProfile" xml:space="preserve">
+    <value>Manage User Profile</value>
+  </data>
+  <data name="NotRegistered" xml:space="preserve">
+    <value>If You Not Registered</value>
+  </data>
+  <data name="TotalBill" xml:space="preserve">
+    <value>Total Bill</value>
+  </data>
+  <data name="CantRegisterRightNow" xml:space="preserve">
+    <value>Error!No possibility to register now please visit later</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="EnglishDescription" xml:space="preserve">
+    <value>English Description</value>
+  </data>
+  <data name="EnterSystem" xml:space="preserve">
+    <value>Log in to system</value>
+  </data>
+  <data name="ErrorCompleteForm" xml:space="preserve">
+    <value>Error!Pleaase Complete the Form</value>
+  </data>
+  <data name="ErrorEnterMobile" xml:space="preserve">
+    <value>Please Enter Mobile phone</value>
+  </data>
+  <data name="ErrorEnterPass" xml:space="preserve">
+    <value>Please Enter Password</value>
+  </data>
+  <data name="ErrorEnterUsername" xml:space="preserve">
+    <value>Please Enter Username</value>
+  </data>
+  <data name="ErrorEnterٍEmail" xml:space="preserve">
+    <value>Please Enter Email</value>
+  </data>
+  <data name="ErrorPassNotMatch" xml:space="preserve">
+    <value>Password not match</value>
+  </data>
+  <data name="ErrorRepeatEmail" xml:space="preserve">
+    <value>Error!This Email is already exist</value>
+  </data>
+  <data name="ErrorRepeatMobile" xml:space="preserve">
+    <value>Error!This mobile number is already exist</value>
+  </data>
+  <data name="ErrorRepeatPass" xml:space="preserve">
+    <value>Please Repeat Password</value>
+  </data>
+  <data name="ErrorRepeatUsername" xml:space="preserve">
+    <value>Error!This Email is already exist</value>
+  </data>
+  <data name="ErrorShortPass" xml:space="preserve">
+    <value>Error!password at least should have 5 characters</value>
+  </data>
+  <data name="ErrorValidEmail" xml:space="preserve">
+    <value>Error!Enter valid Email format</value>
+  </data>
+  <data name="ErrorValidEmailField" xml:space="preserve">
+    <value>Error!confirm password does not match</value>
+  </data>
+  <data name="ErrorValidMobile" xml:space="preserve">
+    <value>Error!Enter valid Mobile number format</value>
+  </data>
+  <data name="FarsiDescription" xml:space="preserve">
+    <value>Farsi Description</value>
+  </data>
+  <data name="FillRegisterForm" xml:space="preserve">
+    <value>For Registering fill Out below Form</value>
+  </data>
+  <data name="LogInForm" xml:space="preserve">
+    <value>Log In Form</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="RepeatPass" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="RequestId" xml:space="preserve">
+    <value>Request Id</value>
+  </data>
+  <data name="ShowBasket" xml:space="preserve">
+    <value>Show basket</value>
+  </data>
+  <data name="UrUsernameAddSuccessfully" xml:space="preserve">
+    <value>Your Username successfully add.you can now Log in system</value>
   </data>
 </root>

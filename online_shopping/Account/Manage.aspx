@@ -1,4 +1,4 @@
-﻿<%@ Page Title="مدیریت پروفایل کاربری" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="online_shopping.Account.Manage" %>
+﻿<%@ Page Title="<%$Resources:Resource,ManageProfile%>" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="online_shopping.Account.Manage" %>
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 <%@ Import Namespace="Microsoft.AspNet.Membership.OpenAuth" %>
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
