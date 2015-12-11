@@ -40,7 +40,7 @@
         </tr>
         <tr>
             <td>
-               <asp:TextBox ID="tb_InfoFa" runat="server"></asp:TextBox>
+               <asp:TextBox ID="tb_InfoFa" runat="server" TextMode="MultiLine"></asp:TextBox>
             </td>
             <td>
                  <asp:Literal runat="server" Text="<%$Resources:Resource, FarsiDescription%>" />
@@ -48,7 +48,7 @@
         </tr>
         <tr>
             <td>
-               <asp:TextBox ID="tb_InfoEa" runat="server"></asp:TextBox>
+               <asp:TextBox ID="tb_InfoEa" runat="server" TextMode="MultiLine"></asp:TextBox>
             </td>
             <td>
                 <asp:Literal runat="server" Text="<%$Resources:Resource, EnglishDescription%>" />
